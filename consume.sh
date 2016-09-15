@@ -1,4 +1,6 @@
 #!/bin/bash
+# script for consuming satellite images of the coast of Greenland and
+# the Baltic Sea
 yesterday=$(date +%Y%j -d yesterday)
 places[0]="Academy_Glacier"
 places[1]="Geickie_Plateau"
@@ -22,4 +24,6 @@ for i in "${places[@]}"
 do
   curl -O -L -J "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?project=arctic_regions&subset=$i.$yesterday.terra.250m.tif"
 done
+cd /data
+curl -O -L -J "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?subset=BalticSea.$yesterday.terra.250m"
 exit 0
