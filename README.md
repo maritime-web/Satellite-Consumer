@@ -6,4 +6,4 @@ Container responsible for consuming satellite images of the coast of Greenland a
 
 ## How to run
 
-    docker run --rm -v $(pwd):/data dmadk/sat-consumer
+    docker run --rm -v $(pwd):/data dmadk/satellite-consumer
