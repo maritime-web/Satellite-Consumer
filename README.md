@@ -1,5 +1,5 @@
 # NASA satellite image consumer
-Container responsible of consuming satellite images of the coast of Greenland and the Baltic Sea.
+Container responsible for consuming satellite images of the coast of Greenland and the Baltic Sea.
 
 ## Requirements
 * Docker
