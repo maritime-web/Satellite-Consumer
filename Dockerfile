@@ -10,6 +10,8 @@ RUN apk add bash
 
 RUN apk add curl
 
+RUN apk add coreutils
+
 VOLUME /data
 
 CMD ["./consume.sh"]
