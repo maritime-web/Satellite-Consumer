@@ -19,11 +19,13 @@ places[13]="South_Region"
 places[14]="Southwest_Region"
 places[15]="Thule"
 places[16]="Uummannaq"
-cd /data
+cd /tmp
 for i in "${places[@]}"
 do
   curl -O -L -J "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?project=arctic_regions&subset=$i.$yesterday.terra.250m.tif"
 done
+echo "Merging Arctic images"
+gdal_merge.py -o /data/Arctic.$yesterday.terra.250m.tif *.tif
 cd /data
 curl -O -L -J "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?subset=BalticSea.$yesterday.terra.250m.tif"
 exit 0
