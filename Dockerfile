@@ -1,17 +1,17 @@
-FROM alpine:latest
+FROM klokantech/gdal:1.11
+
+RUN apt-get update
+
+RUN apt-get install -y curl
+
+RUN apt-get clean
 
 COPY consume.sh /consume.sh
 
 RUN chmod +x /consume.sh
 
-RUN apk update
-
-RUN apk add bash
-
-RUN apk add curl
-
-RUN apk add coreutils
-
 VOLUME /data
+
+WORKDIR /
 
 CMD ["./consume.sh"]
