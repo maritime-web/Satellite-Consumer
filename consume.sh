@@ -20,6 +20,7 @@ places[14]="Southwest_Region"
 places[15]="Thule"
 places[16]="Uummannaq"
 cd /tmp
+# download for the coast of Greenland
 for i in "${places[@]}"
 do
   curl -O -L -J "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?project=arctic_regions&subset=$i.$yesterday.terra.250m.tif"
@@ -29,6 +30,10 @@ echo "Merging Arctic images"
 gdal_merge.py -o /data/Greenland.$yesterday.terra.250m.tif *.terra.250m.tif
 gdal_merge.py -o /data/Greenland.$yesterday.aqua.250m.tif *.aqua.250m.tif
 cd /data
+# download for the Baltic Sea
 curl -O -L -J "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?subset=BalticSea.$yesterday.terra.250m.tif"
 curl -O -L -J "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?subset=BalticSea.$yesterday.aqua.250m.tif"
+# download for Svalbard
+curl -O -L -J "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?project=aeronet&subset=Hornsund.$yesterday.terra.250m.tif"
+curl -O -L -J "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?project=aeronet&subset=Hornsund.$yesterday.aqua.250m.tif"
 exit 0
