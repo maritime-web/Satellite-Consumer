@@ -23,9 +23,12 @@ cd /tmp
 for i in "${places[@]}"
 do
   curl -O -L -J "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?project=arctic_regions&subset=$i.$yesterday.terra.250m.tif"
+  curl -O -L -J "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?project=arctic_regions&subset=$i.$yesterday.aqua.250m.tif"
 done
 echo "Merging Arctic images"
-gdal_merge.py -o /data/Arctic.$yesterday.terra.250m.tif *.tif
+gdal_merge.py -o /data/Greenland.$yesterday.terra.250m.tif *.terra.250m.tif
+gdal_merge.py -o /data/Greenland.$yesterday.aqua.250m.tif *.aqua.250m.tif
 cd /data
 curl -O -L -J "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?subset=BalticSea.$yesterday.terra.250m.tif"
+curl -O -L -J "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?subset=BalticSea.$yesterday.aqua.250m.tif"
 exit 0
