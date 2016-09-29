@@ -36,4 +36,7 @@ curl -O -L -J "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?subset=Balt
 # download for Svalbard
 curl -O -L -J "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?project=aeronet&subset=Hornsund.$yesterday.terra.250m.tif"
 curl -O -L -J "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?project=aeronet&subset=Hornsund.$yesterday.aqua.250m.tif"
+# download for Canada
+curl -O -L -J "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?subset=ARCTAS_Spring_Canada.$yesterday.terra.1km.tif"
+curl -O -L -J "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?subset=ARCTAS_Spring_Canada.$yesterday.aqua.1km.tif"
 exit 0
