@@ -36,7 +36,7 @@ curl -o "BalticSea.$suffixterra" "https://lance.modaps.eosdis.nasa.gov/imagery/s
 curl -o "BalticSea.$suffixaqua" "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?subset=BalticSea.aqua.250m.tif"
 # download for Svalbard
 curl -o "AERONET_Hornsund.$suffixterra" "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?project=aeronet&subset=Hornsund.terra.250m.tif"
-curl -o "AERONET_Hornsund.$suffixaqua" "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?project=aeronet&subset=Hornsund.aqua.250m.tif"
+curl -o "AERONET_Hornsund.$suffixaqua" "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?project=aeronet&subset=Hornsund.aqua.250m.tif" 
 # download for Canada
 curl -o "ARCTAS_Spring_Canada.latest.terra.1km.tif" "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?subset=ARCTAS_Spring_Canada.terra.1km.tif"
 curl -o "ARCTAS_Spring_Canada.latest.aqua.1km.tif" "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?subset=ARCTAS_Spring_Canada.aqua.1km.tif"
