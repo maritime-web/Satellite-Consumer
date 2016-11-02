@@ -33,10 +33,10 @@ gdal_merge.py -o /data/Greenland.latest.aqua.250m.tif *.aqua.250m.tif
 cd /data
 # download for the Baltic Sea
 curl -o "BalticSea.$suffixterra" "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?subset=BalticSea.terra.250m.tif"
-curl -o "BalticSea.$suffixaqua" "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?subset=BalticSea.aqua.250m.tif"
+curl -o "BalticSea.latest.aqua.500m.tif" "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?subset=BalticSea.aqua.500m.tif"
 # download for Svalbard
 curl -o "AERONET_Hornsund.$suffixterra" "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?project=aeronet&subset=Hornsund.terra.250m.tif"
-curl -o "AERONET_Hornsund.$suffixaqua" "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?project=aeronet&subset=Hornsund.aqua.250m.tif" 
+curl -o "AERONET_Hornsund.$suffixaqua" "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?project=aeronet&subset=Hornsund.aqua.250m.tif"
 # download for Canada
 curl -o "ARCTAS_Spring_Canada.latest.terra.1km.tif" "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?subset=ARCTAS_Spring_Canada.terra.1km.tif"
 curl -o "ARCTAS_Spring_Canada.latest.aqua.1km.tif" "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?subset=ARCTAS_Spring_Canada.aqua.1km.tif"
