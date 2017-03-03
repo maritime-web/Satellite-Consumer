@@ -2,7 +2,6 @@
 # script for consuming satellite images of the coast of Greenland and
 # the Baltic Sea
 yesterday=$(date +%Y%j --date="1 day ago")
-curlargs="-O -L -J -H \"Accept: image/tiff\""
 places[0]="Academy_Glacier"
 places[1]="Geickie_Plateau"
 places[2]="Helheim_Area"
