@@ -1,6 +1,17 @@
 #!/bin/bash
 # script for consuming satellite images of the coast of Greenland and
 # the Baltic Sea
+function checkFileSizes {
+  echo "Checking for images that are not actually images"
+  for f in *.tif
+  do
+    size=$(wc -c <$f)
+    if [ $size -lt 1000 ]; then
+      echo "Deleting $f because it is not an image"
+      rm $f
+    fi
+  done
+}
 suffixterra="latest.terra.250m.tif"
 suffixaqua="latest.aqua.250m.tif"
 places[0]="Academy_Glacier"
@@ -40,4 +51,5 @@ curl -o "AERONET_Hornsund.$suffixaqua" "https://lance.modaps.eosdis.nasa.gov/ima
 # download for Canada
 curl -o "ARCTAS_Spring_Canada.latest.terra.1km.tif" "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?subset=ARCTAS_Spring_Canada.terra.1km.tif"
 curl -o "ARCTAS_Spring_Canada.latest.aqua.1km.tif" "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?subset=ARCTAS_Spring_Canada.aqua.1km.tif"
+checkFileSizes
 exit 0
