@@ -38,6 +38,7 @@ do
   curl -o "$i.$suffixterra" "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?project=arctic_regions&subset=$i.terra.250m.tif"
   curl -o "$i.$suffixaqua" "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?project=arctic_regions&subset=$i.aqua.250m.tif"
 done
+checkFileSizes
 echo "Merging Arctic images"
 gdal_merge.py -o /data/Greenland.latest.terra.250m.tif *.terra.250m.tif
 gdal_merge.py -o /data/Greenland.latest.aqua.250m.tif *.aqua.250m.tif
