@@ -37,6 +37,7 @@ do
   curl -O -L -J "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?project=arctic_regions&subset=$i.$yesterday.terra.250m.tif"
   curl -O -L -J "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?project=arctic_regions&subset=$i.$yesterday.aqua.250m.tif"
 done
+checkFileSizes
 echo "Merging Arctic images"
 gdal_merge.py -o /data/Greenland.$yesterday.terra.250m.tif *.terra.250m.tif
 gdal_merge.py -o /data/Greenland.$yesterday.aqua.250m.tif *.aqua.250m.tif
