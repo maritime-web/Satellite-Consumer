@@ -39,6 +39,7 @@ do
   curl -o "$i.$suffixaqua" "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?project=arctic_regions&subset=$i.aqua.250m.tif"
 done
 checkFileSizes
+python -c "import os; os.chdir('/'); import CheckImages; CheckImages.checkImages('/tmp')"
 echo "Merging Arctic images"
 gdal_merge.py -o /data/Greenland.latest.terra.250m.tif *.terra.250m.tif
 gdal_merge.py -o /data/Greenland.latest.aqua.250m.tif *.aqua.250m.tif
@@ -53,4 +54,5 @@ curl -o "AERONET_Hornsund.$suffixaqua" "https://lance.modaps.eosdis.nasa.gov/ima
 curl -o "ARCTAS_Spring_Canada.latest.terra.1km.tif" "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?subset=ARCTAS_Spring_Canada.terra.1km.tif"
 curl -o "ARCTAS_Spring_Canada.latest.aqua.1km.tif" "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?subset=ARCTAS_Spring_Canada.aqua.1km.tif"
 checkFileSizes
+python -c "import os; os.chdir('/'); import CheckImages; CheckImages.checkImages('/data')"
 exit 0
