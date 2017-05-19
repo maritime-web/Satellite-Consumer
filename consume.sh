@@ -38,6 +38,7 @@ do
   curl -O -L -J "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?project=arctic_regions&subset=$i.$yesterday.aqua.250m.tif"
 done
 checkFileSizes
+python -c "import os; os.chdir('/'); import CheckImages; CheckImages.checkImages('/tmp')"
 echo "Merging Arctic images"
 gdal_merge.py -o /data/Greenland.$yesterday.terra.250m.tif *.terra.250m.tif
 gdal_merge.py -o /data/Greenland.$yesterday.aqua.250m.tif *.aqua.250m.tif
@@ -52,4 +53,5 @@ curl -O -L -J "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?project=aer
 curl -O -L -J "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?subset=ARCTAS_Spring_Canada.$yesterday.terra.1km.tif"
 curl -O -L -J "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?subset=ARCTAS_Spring_Canada.$yesterday.aqua.1km.tif"
 checkFileSizes
+python -c "import os; os.chdir('/'); import CheckImages; CheckImages.checkImages('/data')"
 exit 0
