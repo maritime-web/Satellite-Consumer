@@ -53,5 +53,5 @@ curl -O -L -J "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?project=aer
 curl -O -L -J "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?subset=ARCTAS_Spring_Canada.$yesterday.terra.1km.tif"
 curl -O -L -J "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?subset=ARCTAS_Spring_Canada.$yesterday.aqua.1km.tif"
 checkFileSizes
-python -c "import os; os.chdir('/'); import CheckImages; CheckImages.checkImages('/data')"
+#python -c "import os; os.chdir('/'); import CheckImages; CheckImages.checkImages('/data')"
 exit 0
