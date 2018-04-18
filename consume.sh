@@ -56,5 +56,5 @@ curl -O -L -J "https://lance.modaps.eosdis.nasa.gov/imagery/subsets/?subset=ARCT
 curl -O -L -J "https://lance-modis.eosdis.nasa.gov/imagery/subsets/?subset=AERONET_Koforidua_ANUC.$yesterday.terra.250m.tif"
 curl -O -L -J "https://lance-modis.eosdis.nasa.gov/imagery/subsets/?subset=AERONET_Koforidua_ANUC.$yesterday.aqua.250m.tif"
 checkFileSizes
-python -c "import os; os.chdir('/'); import CheckImages; CheckImages.checkImages('/data')"
+#python -c "import os; os.chdir('/'); import CheckImages; CheckImages.checkImages('/data')"
 exit 0
